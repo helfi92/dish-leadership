@@ -1,11 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var promotionRouter = express.Router();
+var promotionsRouter = express.Router();
 
-promotionRouter.use(bodyParser.json());
+promotionsRouter.use(bodyParser.json());
 
-promotionRouter
+promotionsRouter
 	.route('/')
 	.all(function(req, res, next){
 		res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -20,7 +20,7 @@ promotionRouter
 	.delete(function(req, res, next){
 		res.end('Deleting all dishes');
 	});
-promotionRouter
+promotionsRouter
 	.route('/:promotionId')
 	.get(function(req, res, next){
 		res.end('Will send details of promotion with id: ' + req.params.promotionId + ' to you');
@@ -32,6 +32,6 @@ promotionRouter
 		res.end('Will delete promotion with id: ' + req.params.promotionId);
 	});
 
-//app.use('/dishes',promotionRouter);
+//app.use('/dishes',promotionsRouter);
 
-module.exports = promotionRouter;
+module.exports = promotionsRouter;

@@ -1,17 +1,17 @@
 {
-  "name": "coursera",
-  "version": "1.0.0",
-  "description": "coursera",
-  "main": "server.js",
+  "name": "node-express-gen",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "author": "Hassan Ali",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "express": "^4.13.4",
-    "morgan": "^1.7.0",
-    "yargs": "^4.7.0"
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
   }
 }

@@ -1,11 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var leadershipRouter = express.Router();
+var leadershipsRouter = express.Router();
 
-leadershipRouter.use(bodyParser.json());
+leadershipsRouter.use(bodyParser.json());
 
-leadershipRouter
+leadershipsRouter
 	.route('/')
 	.all(function(req, res, next){
 		res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -20,7 +20,7 @@ leadershipRouter
 	.delete(function(req, res, next){
 		res.end('Deleting all dishes');
 	});
-leadershipRouter
+leadershipsRouter
 	.route('/:leadershipId')
 	.get(function(req, res, next){
 		res.end('Will send details of leadership with id: ' + req.params.leadershipId + ' to you');
@@ -33,4 +33,4 @@ leadershipRouter
 	});
 
 
-module.exports = leadershipRouter;
+module.exports = leadershipsRouter;

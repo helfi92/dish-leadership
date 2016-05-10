@@ -1,11 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var dishRouter = express.Router();
+var dishesRouter = express.Router();
 
-dishRouter.use(bodyParser.json());
+dishesRouter.use(bodyParser.json());
 
-dishRouter
+dishesRouter
 	.route('/')
 	.all(function(req, res, next){
 		res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -20,7 +20,7 @@ dishRouter
 	.delete(function(req, res, next){
 		res.end('Deleting all dishes');
 	});
-dishRouter
+dishesRouter
 	.route('/:dishId')
 	.get(function(req, res, next){
 		res.end('Will send details of dish with id: ' + req.params.dishId + ' to you');
@@ -32,6 +32,6 @@ dishRouter
 		res.end('Will delete dish with id: ' + req.params.dishId);
 	});
 
-//app.use('/dishes',dishRouter);
+//app.use('/dishes',dishesRouter);
 
-module.exports = dishRouter;
+module.exports = dishesRouter;
